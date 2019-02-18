@@ -5,10 +5,8 @@ The apps demonstrate the same functionality in three flavours:
 * TypeScript
 * React
 
-The apps demonstrate some basic points and flows  
-that are relevant when developing Overwolf apps.  
-The app will auto launch on PUBG start 
-* Auto launch on PUBG start ([manifest settings](http://developers.overwolf.com/documentation/sdk/overwolf/manifest-json/#game_events))
+The apps demonstrate some basic points and flows that are relevant when developing Overwolf apps:  
+* The app will show up automatically when you launch PUBG ([manifest settings](http://developers.overwolf.com/documentation/sdk/overwolf/manifest-json/#game_events))
 * Register to Game Events Provider (GEP) in order to receive real time events from the game ([documentation](http://developers.overwolf.com/documentation/sdk/overwolf/games/events/))
 * Define a toggle (show/hide) hotkey ([manifest settings](http://developers.overwolf.com/documentation/sdk/overwolf/manifest-json/#hotkeys)) and a [custom hotkey](http://developers.overwolf.com/documentation/sdk/overwolf/settings/#registerhotkey) 
 * Detect the launch source of the app (auto-launch from game start or manual)
