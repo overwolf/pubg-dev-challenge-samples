@@ -1,5 +1,5 @@
 # PUBG Developers Challenge Sample Apps
-This repository contains Overwolf sample apps for PUBG developers challenge.  
+This repository contains Overwolf sample apps for the PUBG developers challenge.  
 The apps demonstrate the same functionality in three flavours:  
 * Native (Vanilla) JS
 * TypeScript
