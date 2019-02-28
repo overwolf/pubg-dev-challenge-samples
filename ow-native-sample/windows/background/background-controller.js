@@ -4,14 +4,12 @@ define([
   '../../scripts/services/windows-service.js',
   '../../scripts/services/hotkeys-service.js',
   '../../scripts/services/gep-service.js',
-  '../../scripts/services/screenshots-service.js',
   '../../scripts/services/event-bus.js'
 ], function (WindowNames,
              runningGameService,
              windowsService,
              hotkeysService,
              gepService,
-             screenshotService,
              eventBus) {
 
   class BackgroundController {
@@ -20,7 +18,6 @@ define([
       window.ow_eventBus = eventBus;
 
       BackgroundController._registerAppLaunchTriggerHandler();
-      BackgroundController._registerHotkeys();
 
       let startupWindow = await windowsService.getStartupWindowName();
       windowsService.restore(startupWindow);
@@ -56,21 +53,6 @@ define([
 
     static _onAppRelaunch() {
       windowsService.restore(WindowNames.SETTINGS);
-    }
-
-    /**
-     * set custom hotkey behavior to take screenshot in game
-     * @private
-     */
-    static _registerHotkeys() {
-      hotkeysService.setTakeScreenshotHotkey(async () => {
-        try {
-          let screenshotUrl = await screenshotService.takeScreenshot();
-          window.ow_eventBus.trigger('screenshot', screenshotUrl);
-        } catch (e) {
-          console.error(e);
-        }
-      });
     }
   }
 
