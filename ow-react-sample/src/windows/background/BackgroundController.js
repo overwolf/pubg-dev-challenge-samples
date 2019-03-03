@@ -15,7 +15,7 @@ class BackgroundController {
 		BackgroundController._registerAppLaunchTriggerHandler();
 		BackgroundController._registerHotkeys();
 		
-		let startupWindow = WindowsService.getStartupWindowName();
+		let startupWindow = await WindowsService.getStartupWindowName();
 		WindowsService.restore(startupWindow);
 
 		let isGameRunning = RunningGameService.isGameRunning();
