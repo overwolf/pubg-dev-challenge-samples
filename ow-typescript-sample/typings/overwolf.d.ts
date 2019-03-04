@@ -1175,7 +1175,7 @@ declare namespace overwolf {
        * Gets the current game info.
        * @param callback 
        */
-      function getInfo(callback: () => void): void
+      function getInfo(callback: (payload?: any) => void): void
       
       /**
        * Fired when there was an error in the game events system.

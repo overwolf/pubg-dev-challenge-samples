@@ -15,7 +15,7 @@ import {SettingsController} from "./windows/settings/settings-controller";
       InGameController.run();
       break;
     }
-    case 'settings': {
+    case 'settings2': {
       SettingsController.run();
       break;
     }
