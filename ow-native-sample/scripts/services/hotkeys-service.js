@@ -25,8 +25,6 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
    * @private
    */
   function _setHotkey(hotkeyId, action) {
-    console.log('id ', hotkeyId);
-    console.log('action ', action);    
     overwolf.settings.registerHotKey(hotkeyId, function (result) {
       if (result.status === 'success') {
         action();
