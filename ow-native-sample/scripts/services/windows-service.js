@@ -124,10 +124,31 @@ define([
     return WindowNames.SETTINGS;
   }
 
+  /**
+   * get state of the window
+   * @returns {Promise<*>}
+   */
+  async function getStateWindowName(name) {
+    return new Promise(async (resolve, reject) => {
+      try {
+        overwolf.windows.getWindowState(name, (state) => {
+          if (state.status === 'success') {
+            resolve(state.window_state);
+          } else {
+            reject(result);
+          }
+        })
+      } catch (e){
+        reject(e);
+      }
+    });
+  }
+
   return {
     restore,
     dragMove,
     minimize,
-    getStartupWindowName
+    getStartupWindowName,
+    getStateWindowName
   }
 });

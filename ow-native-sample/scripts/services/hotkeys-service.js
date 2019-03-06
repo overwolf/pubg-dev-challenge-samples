@@ -25,6 +25,8 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
    * @private
    */
   function _setHotkey(hotkeyId, action) {
+    console.log('id ', hotkeyId);
+    console.log('action ', action);    
     overwolf.settings.registerHotKey(hotkeyId, function (result) {
       if (result.status === 'success') {
         action();
@@ -53,6 +55,10 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
   function setTakeScreenshotHotkey(action) {
     _setHotkey(HOTKEYS.TAKE_SCREENSHOT, action);
   }
+  
+  function setToggleHotkey(action) {
+    _setHotkey(HOTKEYS.TOGGLE,action);
+  }
 
   function addHotkeyChangeListener(listener) {
     overwolf.settings.OnHotKeyChanged.addListener(listener);
@@ -62,6 +68,7 @@ define(['../constants/hotkeys-ids.js'], function (HOTKEYS) {
     getTakeScreenshotHotkey,
     getToggleHotkey,
     setTakeScreenshotHotkey,
+    setToggleHotkey,
     addHotkeyChangeListener
   };
 });

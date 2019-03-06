@@ -70,6 +70,14 @@ define([
         } catch (e) {
           console.error(e);
         }
+      }),
+      hotkeysService.setToggleHotkey(async () => {
+        let state = await windowsService.getStateWindowName(WindowNames.IN_GAME);
+        if(state == 'minimized' || state == 'closed'){
+          windowsService.restore(WindowNames.IN_GAME)
+        }else if(state == 'normal' || state == 'maximized'){
+          windowsService.minimize(WindowNames.IN_GAME)
+        }
       });
     }
   }
