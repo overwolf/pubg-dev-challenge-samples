@@ -544,7 +544,7 @@ declare namespace overwolf {
      * @param height The new window height in pixels.
      * @param callback A callback which is called when the size change is completed.
      */
-    function changeSize(windowId: string, width: number, height: number, callback: () => void): void
+    function changeSize(windowId: string, width: number, height: number, callback: (result: any) => void): void
     
     /**
      * Changes the window position in pixels from the top left corner.
@@ -553,7 +553,7 @@ declare namespace overwolf {
      * @param top The new window position on the Y axis in pixels from the top.
      * @param callback A callback which is called when the position change is completed.
      */
-    function changePosition(windowId: string, left: number, top: number, callback: () => void): void
+    function changePosition(windowId: string, left: number, top: number, callback: (result: any) => void): void
     
     /**
      * Closes the window.
