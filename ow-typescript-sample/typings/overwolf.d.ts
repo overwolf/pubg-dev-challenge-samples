@@ -22,7 +22,7 @@ declare namespace overwolf {
      * @param filePath The path to check for.
      * @param callback Returns with the result.
      */
-    function fileExists(filePath: string, callback: () => void): void
+    function fileExists(filePath: string, callback: (status: string, found: boolean) => void): void
     
     /**
      * Writes the content to the target file. If the file doesn't exist, it will be created, along with any needed directories along the path. Otherwise, the file's content will be overwritten.
@@ -32,7 +32,7 @@ declare namespace overwolf {
      * @param triggerUacIfRequired If additional permissions are required, allows the triggering of the Windows UAC dialog.
      * @param callback Called with the status of the request.
      */
-    function writeFileContents(filePath: string, content: string, encoding: any, triggerUacIfRequired: boolean, callback: () => void): void
+    function writeFileContents(filePath: string, content: string, encoding: any, triggerUacIfRequired: boolean, callback: (status: string) => void): void
     
     /**
      * Read the content to the target file.
@@ -40,7 +40,7 @@ declare namespace overwolf {
      * @param encoding The encoding to use, see more at
      * @param callback Called with the status of the request and the file contect.
      */
-    function readFileContents(filePath: string, encoding: any, callback: () => void): void
+    function readFileContents(filePath: string, encoding: any, callback: (status: string, message: string) => void): void
     
     /**
      * Copy a file from the local extension directory to a destination on the localmachine
