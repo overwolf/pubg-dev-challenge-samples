@@ -128,7 +128,7 @@ define([
    * get state of the window
    * @returns {Promise<*>}
    */
-  async function getStateWindowName(name) {
+  async function getWindowState(name) {
     return new Promise(async (resolve, reject) => {
       try {
         overwolf.windows.getWindowState(name, (state) => {
@@ -149,6 +149,6 @@ define([
     dragMove,
     minimize,
     getStartupWindowName,
-    getStateWindowName
+    getWindowState
   }
 });
