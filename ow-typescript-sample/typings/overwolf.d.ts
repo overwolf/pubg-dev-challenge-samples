@@ -22,7 +22,7 @@ declare namespace overwolf {
      * @param filePath The path to check for.
      * @param callback Returns with the result.
      */
-    function fileExists(filePath: string, callback: (status: string, found: boolean) => void): void
+    function fileExists(filePath: string, callback: (status: any, found: boolean) => void): void
     
     /**
      * Writes the content to the target file. If the file doesn't exist, it will be created, along with any needed directories along the path. Otherwise, the file's content will be overwritten.
@@ -32,7 +32,7 @@ declare namespace overwolf {
      * @param triggerUacIfRequired If additional permissions are required, allows the triggering of the Windows UAC dialog.
      * @param callback Called with the status of the request.
      */
-    function writeFileContents(filePath: string, content: string, encoding: any, triggerUacIfRequired: boolean, callback: (status: string) => void): void
+    function writeFileContents(filePath: string, content: string, encoding: any, triggerUacIfRequired: boolean, callback: (status: any) => void): void
     
     /**
      * Read the content to the target file.
@@ -40,7 +40,7 @@ declare namespace overwolf {
      * @param encoding The encoding to use, see more at
      * @param callback Called with the status of the request and the file contect.
      */
-    function readFileContents(filePath: string, encoding: any, callback: (status: string, message: string) => void): void
+    function readFileContents(filePath: string, encoding: any, callback: (status: any, message: string) => void): void
     
     /**
      * Copy a file from the local extension directory to a destination on the localmachine
@@ -50,7 +50,7 @@ declare namespace overwolf {
      * @param reserved for future use.
      * @param callback result callback.
      */
-    function copyFile(src: string, dst: string, overrideFile: boolean, reserved: boolean, callback: () => void): void
+    function copyFile(src: string, dst: string, overrideFile: boolean, reserved: boolean, callback: (status: any) => void): void
     
     namespace enums {
       const enum eEncoding {
@@ -560,7 +560,7 @@ declare namespace overwolf {
      * @param windowId The id or name of the window to close.
      * @param callback Called after the window is closed.
      */
-    function close(windowId: string, callback: () => void): void
+    function close(windowId: string, callback: (result: any) => void): void
     
     /**
      * Minimizes the window.
@@ -574,14 +574,14 @@ declare namespace overwolf {
      * @param windowId The id or name of the window to hide.
      * @param callback Called after the window is hidden.
      */
-    function hide(windowId: string, callback: () => void): void
+    function hide(windowId: string, callback: (result: any) => void): void
     
     /**
      * Maximizes the window.
      * @param windowId The id or name of the window to maximize.
      * @param callback Called after the window is maximized.
      */
-    function maximize(windowId: string, callback: () => void): void
+    function maximize(windowId: string, callback: (result: any) => void): void
     
     /**
      * Restores a minimized window.
@@ -595,7 +595,7 @@ declare namespace overwolf {
      * @param windowId The id or name of the window.
      * @param callback Called with the window state.
      */
-    function getWindowState(windowId: string, callback: () => void): void
+    function getWindowState(windowId: string, callback: (result: any) => void): void
     
     /**
      * Returns the state of all windows owned by the app (normal/minimized/maximized/closed).
@@ -674,7 +674,7 @@ declare namespace overwolf {
      * @param windowId The id or name of the window.
      * @param callback Called with the result of the request.
      */
-    function sendToBack(windowId: string, callback: () => void): void
+    function sendToBack(windowId: string, callback: (result: any) => void): void
     
     /**
      * Brings the requested window to the front.
@@ -2196,7 +2196,7 @@ declare namespace overwolf {
        * @param name The name of the object as appears in the manifest.
        * @param callback A function called with the extra object, if found, and a status indicating success or failure.
        */
-      function getExtraObject(name: string, callback: () => void): void
+      function getExtraObject(name: string, callback: (result:any) => void): void
       
       /**
        * Returns the current extension's manifest object.
@@ -2223,7 +2223,7 @@ declare namespace overwolf {
      * Returns an array with all monitors data including their display resolution, bounds, and names.
      * @param callback Called with the monitors array.
      */
-    function getMonitorsList(callback: () => void): void
+    function getMonitorsList(callback: (data: any) => void): void
     
     /**
      * Sends a string representing a key stroke to the game, causing a simulated key stroke.
